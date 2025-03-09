@@ -13,11 +13,16 @@ public class Pokemon {
 	private String type2;
 
 	// CONSTRUCTORS
-	public Pokemon(String name, String type1, String type2) {
-		if(!this.setAll(name, type1, type2)) {
-			System.out.println("ERROR: Pokemon full constructor illegal argument passed. Exiting program.");
-			System.exit(0);
+	public Pokemon(String name, String type1, String type2) throws IllegalArgumentException {
+		if (!this.setAll(name, type1, type2)) {
+			System.out.println("TEST OUTPUT");
+			System.out.println("name = " + name);
+			System.out.println("type1 = " + type1);
+			System.out.println("type1 = " + type2);
+			throw new IllegalArgumentException(
+					"ERROR: Pokemon full constructor illegal argument passed. Exiting program.");
 		}
+		System.out.println("TEST OUTPUT: Success!");
 	}
 
 	public Pokemon(String name, String type) {
@@ -28,9 +33,9 @@ public class Pokemon {
 	}
 
 	public Pokemon(Pokemon p) throws IllegalArgumentException {
-		if(p == null) {
-			System.out.println("ERROR: Pokemon copy constructor illegal argument (null) passed.");
-			System.exit(0);
+		if (p == null) {
+			System.out.println("TEST OUTPUT: null");
+			throw new IllegalArgumentException("ERROR: Pokemon copy constructor illegal argument (null) passed.");
 		}
 		this.setAll(p.name, p.type1, p.type2);
 	}
