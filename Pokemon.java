@@ -18,7 +18,7 @@ public class Pokemon {
 			System.out.println("TEST OUTPUT");
 			System.out.println("name = " + name);
 			System.out.println("type1 = " + type1);
-			System.out.println("type1 = " + type2);
+			System.out.println("type2 = " + type2);
 			throw new IllegalArgumentException(
 					"ERROR: Pokemon full constructor illegal argument passed. Exiting program.");
 		}
